@@ -10,16 +10,17 @@ class Sum extends React.Component{
         };
     }
 
-    updateNumber1() {
+    updateNumber1(element) {
+        this.setState({number1:parseInt(element)}) //quickly convert a string to numbers.
         
     }
 
-    updateNumber2 (){
-
+    updateNumber2 (element){
+        this.setState({number1:parseInt(element)})
     }
 
     add(num1, num2){
-        
+        this.setState({sum:num1+num2})
     }
 
     render (){
