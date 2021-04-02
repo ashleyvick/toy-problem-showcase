@@ -10,22 +10,26 @@ class Palindrome extends React.Component {
     }
 
     handleChange(value) {
-        this.setState({userInput: value});
+        this.setState({userInput: value,
+        palindrome: ''
+    });
     }
 
     isPalindrome (userInput){
-        const forwards = userInput;
-        const backwards = userInput;
-        backwards = backwards.split(''); // used to split a string into an array of substrings, and returns the new array
-        backwards = backwards.reverse(); //reverses an array in place. The first array element becomes the last, and the last array element becomes the first.
-        backwards = backwards.join(''); // returns the array as a string
-    
-        if ( forwards === backwards ) {
-        this.setState({ palindrome: 'true' });
+        const forwards = this.state.userInput;
+        const backwards = forwards.split('').reverse().join('');
+        if (forward === backwards) {
+            this.setState({
+                userInput: '',
+                palindrome: 'true',
+            })
         } else {
-        this.setState({ palindrome: 'false' });
+            this.setState({
+                userInput: '',
+                palindrome: 'false'
+            })
         }
-    }
+    };
 
 
     render (){
